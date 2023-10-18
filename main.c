@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "header.h"
 stack_t *head = NULL;
 
 /**
@@ -8,14 +8,14 @@ stack_t *head = NULL;
  * Return: always 0
  */
 
-int main(int argc, char *argv[])
+int main(int ac, char *av[])
 {
-	if (argc != 2)
+	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	open_file(argv[1]);
+	open_file(av[1]);
 	free_nodes();
 	return (0);
 }
