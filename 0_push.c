@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
-#include "header.h"
+#include "monty.h"
 
 void push(stack_t **stack, unsigned int line_cnt)
 {
