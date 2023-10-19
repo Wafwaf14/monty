@@ -73,11 +73,11 @@ void removeTop(stack_t **stackk, unsigned int ligne_nbr)
 
 /**
  * this is an advanced tassk yahooooooooo more points
- * sub_nodes - reduce the top two elements of the stackk.
+ * SubNodes - reduce the top two elements of the stackk.
  * @stackk: Pointr to a pointer pointing  top node
  * @ligne_nbr: Int equiv the line number of the opcode
  */
-void sub_nodes(stack_t **stackk, unsigned int ligne_nbr)
+void SubNodes(stack_t **stackk, unsigned int ligne_nbr)
 {
 	int somme;
 

@@ -91,7 +91,7 @@ void trouver_maFonc(char *opcode, char *valeur, int ligne_nbr, int forme)
 		{"nop", nop},
 		{"swap", exchangeNodes},
 		{"add", AddNodes},
-		{"sub", sub_nodes},
+		{"sub", SubNodes},
 		{NULL, NULL}
 	};
 

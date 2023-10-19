@@ -67,8 +67,8 @@ void exchangeNodes(stack_t **, unsigned int);
 
 
 void AddNodes(stack_t **, unsigned int);
-void sub_nodes(stack_t **, unsigned int);
-void div_nodes(stack_t **, unsigned int);
+void SubNodes(stack_t **, unsigned int);
+void DivNodes(stack_t **, unsigned int);
 
 
 
