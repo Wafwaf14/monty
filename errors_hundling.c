@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * err - hundle deffrent errors
+ * hundle_error - hundle deffrent errors
  * @erreur_code:error codes to be hundled:
  * 1 user not giving any file
  * 2 file provided cannot opened or read.
