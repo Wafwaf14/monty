@@ -1,13 +1,11 @@
 #include "monty.h"
 stack_t *Head = NULL;
-
 /**
  * main - dashboard
  * @argc: arguments counter
  * @argv: array of arguments
  * Return: always 0
  */
-
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
@@ -56,7 +54,6 @@ void freeMy_node(void)
 	}
 }
 
-
 /**
  * ajout_toqueue - Adds Node to queu
  * @nouv_node: Ptr to new myNode
@@ -79,5 +76,4 @@ void ajout_toqueue(stack_t **nouv_node, __attribute__((unused))unsigned int lgne
 
 	tempo->next = *nouv_node;
 	(*nouv_node)->prev = tempo;
-
 }
