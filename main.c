@@ -1,83 +1,83 @@
 #include "monty.h"
-stack_t *head = NULL;
+stack_t *Head = NULL;
 
 /**
- * main - entry point
- * @argc: arguments count
- * @argv: list of arguments
+ * main - dashboard
+ * @argc: arguments counter
+ * @argv: array of arguments
  * Return: always 0
  */
 
-int main(int ac, char *av[])
+int main(int argc, char *argv[])
 {
-	if (ac != 2)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	open_file(av[1]);
-	free_nodes();
+	myOpen_file(argv[1]);
+	freeMy_node();
 	return (0);
 }
 
 /**
- * create_node - Creates a node.
- * @n: Number to go inside the node.
- * Return: Upon sucess a pointer to the node. Otherwise NULL.
+ * creerNode - Creates Node.
+ * @n: Nbr to go inside the Node.
+ * Return: sucess  ptr to Node. ifnot NULL
  */
-stack_t *create_node(int n)
+stack_t *creerNode(int n)
 {
-	stack_t *node;
+	stack_t *myNode;
 
-	node = malloc(sizeof(stack_t));
-	if (node == NULL)
-		err(4);
-	node->next = NULL;
-	node->prev = NULL;
-	node->n = n;
-	return (node);
+	myNode = malloc(sizeof(stack_t));
+	if (myNode == NULL)
+		hundle_error(4);
+	myNode->next = NULL;
+	myNode->prev = NULL;
+	myNode->n = n;
+	return (myNode);
 }
 
 /**
- * free_nodes - Frees nodes in the stack.
+ * freeMy_node - libere all nodes in stack.
  */
-void free_nodes(void)
+void freeMy_node(void)
 {
-	stack_t *tmp;
+	stack_t *tempo;
 
-	if (head == NULL)
+	if (Head == NULL)
 		return;
 
-	while (head != NULL)
+	while (Head != NULL)
 	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
+		tempo = Head;
+		Head = Head->next;
+		free(tempo);
 	}
 }
 
 
 /**
- * add_to_queue - Adds a node to the queue.
- * @new_node: Pointer to the new node.
- * @ln: line number of the opcode.
+ * ajout_toqueue - Adds Node to queu
+ * @nouv_node: Ptr to new myNode
+ * @lgne_nbr: line nbr of the opcode
  */
-void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void ajout_toqueue(stack_t **nouv_node, __attribute__((unused))unsigned int lgne_nbr)
 {
-	stack_t *tmp;
+	stack_t *tempo;
 
-	if (new_node == NULL || *new_node == NULL)
+	if (nouv_node == NULL || *nouv_node == NULL)
 		exit(EXIT_FAILURE);
-	if (head == NULL)
+	if (Head == NULL)
 	{
-		head = *new_node;
+		Head = *nouv_node;
 		return;
 	}
-	tmp = head;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
+	tempo = Head;
+	while (tempo->next != NULL)
+		tempo = tempo->next;
 
-	tmp->next = *new_node;
-	(*new_node)->prev = tmp;
+	tempo->next = *nouv_node;
+	(*nouv_node)->prev = tempo;
 
 }
